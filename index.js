@@ -1,10 +1,11 @@
-var schema = module.exports = require('gedcomx-json-schema');
+var schema = module.exports = require('gedcomx-json-schema'),
+    definitions = schema.definitions;
 
 /**
  * New data types
  */
 
-schema.definitions.ChangeInfo = {
+definitions.ChangeInfo = {
   type: 'object',
   properties: {
     objectModifier: { type: 'string' },
@@ -18,7 +19,7 @@ schema.definitions.ChangeInfo = {
   }
 };
 
-schema.definitions.ChildAndParentsRelationship = {
+definitions.ChildAndParentsRelationship = {
   type: 'object',
   allOf: [
     { $ref: '#/definitions/Subject' }
@@ -38,16 +39,69 @@ schema.definitions.ChildAndParentsRelationship = {
   }
 };
 
+definitions.Comment = {
+  type: 'object',
+  allOf: [
+    { $ref: '#/definitions/ExtensibleData' }
+  ],
+  properties: {
+    text: { type: 'string' },
+    created: { type: 'integer' },
+    contributor: { $ref: '#/definitions/ResourceReference' }
+  }
+};
+
+definitions.Discussion = {
+  type: 'object',
+  allOf: [
+    { $ref: '#/definitions/ExtensibleData' }
+  ],
+  properties: {
+    title: { type: 'string' },
+    details: { type: 'string' },
+    created: { type: 'integer' },
+    contributor: { $ref: '#/definitions/ResourceReference' },
+    modified: { type: 'integer' },
+    numberOfComments: { type: 'integer' },
+    comments: {
+      type: 'array',
+      items: { $ref: '#/definitions/Comment' }
+    }
+  }
+};
+
+definitions.DiscussionReference = {
+  type: 'object',
+  allOf: [
+    { $ref: '#/definitions/ExtensibleData' }
+  ],
+  properties: {
+    resource: { type: 'string' },
+    resourceId: { type: 'string' },
+    attribution: { $ref: '#/definitions/Attribution' }
+  }
+};
+
 /**
  * Property extensions
  */
 
-schema.definitions.AtomEntry.properties.changeInfo = {
+definitions.AtomEntry.properties.changeInfo = {
   type: 'array',
   items: { $ref: '#/definitions/ChangeInfo' }
 };
 
-schema.definitions.GedcomX.properties.childAndParentsRelationships = {
+definitions.GedcomX.properties.childAndParentsRelationships = {
   type: 'array',
   items: { $ref: '#/definitions/ChildAndParentsRelationship' }
+};
+
+definitions.GedcomX.properties.discussions = {
+  type: 'array',
+  items: { $ref: '#/definitions/Discussion' }
+};
+
+definitions.Person.properties['discussion-references'] = {
+  type: 'array',
+  items: { $ref: '#/definitions/DiscussionReference' }
 };
