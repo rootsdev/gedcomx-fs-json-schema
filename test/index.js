@@ -6,6 +6,8 @@ var fsSchema = require('../');
 
 it('ChangeInfo', validateFile('change-info'));
 
+it('ChildAndParentsRelationship', validateFile('child-and-parent-relationships'));
+
 function validateFile(name){
   return function(){
     assert.jsonSchema(require('./data/' + name), fsSchema);
