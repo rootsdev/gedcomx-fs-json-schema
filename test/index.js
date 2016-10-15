@@ -14,6 +14,8 @@ it('Discussion', validateFile('discussion'));
 
 it('Discussion References', validateFile('discussion-references'));
 
+it('FeatureSet', validateFile('features'));
+
 function validateFile(name){
   return function(){
     assert.jsonSchema(require('./data/' + name), fsSchema);

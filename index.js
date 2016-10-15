@@ -82,6 +82,16 @@ definitions.DiscussionReference = {
   }
 };
 
+definitions.FeatureSet = {
+  type: 'object',
+  properties: {
+    name: { type: 'string' },
+    description: { type: 'string' },
+    enabled: { type: 'boolean' },
+    activationDate: { type: 'integer' }
+  }
+};
+
 /**
  * Property extensions
  */
@@ -104,4 +114,9 @@ definitions.GedcomX.properties.discussions = {
 definitions.Person.properties['discussion-references'] = {
   type: 'array',
   items: { $ref: '#/definitions/DiscussionReference' }
+};
+
+definitions.GedcomX.properties.features = {
+  type: 'array',
+  items: { $ref: '#/definitions/FeatureSet' }
 };
