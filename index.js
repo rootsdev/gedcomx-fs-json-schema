@@ -92,6 +92,14 @@ definitions.FeatureSet = {
   }
 };
 
+definitions.MatchInfo = {
+  type: 'object',
+  properties: {
+    status: { type: 'string' },
+    collection: { type: 'string' }
+  }
+};
+
 /**
  * Property extensions
  */
@@ -111,12 +119,17 @@ definitions.GedcomX.properties.discussions = {
   items: { $ref: '#/definitions/Discussion' }
 };
 
-definitions.Person.properties['discussion-references'] = {
-  type: 'array',
-  items: { $ref: '#/definitions/DiscussionReference' }
-};
-
 definitions.GedcomX.properties.features = {
   type: 'array',
   items: { $ref: '#/definitions/FeatureSet' }
+};
+
+definitions.AtomEntry.properties.matchInfo = {
+  type: 'array',
+  items: { $ref: '#/definitions/MatchInfo' }
+};
+
+definitions.Person.properties['discussion-references'] = {
+  type: 'array',
+  items: { $ref: '#/definitions/DiscussionReference' }
 };
