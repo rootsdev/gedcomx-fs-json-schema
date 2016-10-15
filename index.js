@@ -100,6 +100,13 @@ definitions.MatchInfo = {
   }
 };
 
+definitions.Tag = {
+  type: 'object',
+  properties: {
+    resource: { type: 'string' }
+  }
+};
+
 /**
  * Property extensions
  */
@@ -132,4 +139,9 @@ definitions.AtomEntry.properties.matchInfo = {
 definitions.Person.properties['discussion-references'] = {
   type: 'array',
   items: { $ref: '#/definitions/DiscussionReference' }
+};
+
+definitions.SourceReference.properties.tags = {
+  type: 'array',
+  items: { $ref: '#/definitions/Tag' }
 };

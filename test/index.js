@@ -18,6 +18,8 @@ it('FeatureSet', validateFile('features'));
 
 it('MatchInfo', validateFile('matches'));
 
+it('Tag', validateFile('tags'));
+
 function validateFile(name){
   return function(){
     assert.jsonSchema(require('./data/' + name), fsSchema);
