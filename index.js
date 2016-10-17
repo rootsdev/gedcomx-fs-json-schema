@@ -142,6 +142,14 @@ definitions.MergeConflict = {
   }
 };
 
+definitions.SearchInfo = {
+  type: 'object',
+  properties: {
+    closeHits: { type: 'integer' },
+    totalHits: { type: 'integer' }
+  }
+};
+
 definitions.Tag = {
   type: 'object',
   properties: {
@@ -227,4 +235,9 @@ definitions.Person.properties['discussion-references'] = {
 definitions.SourceReference.properties.tags = {
   type: 'array',
   items: { $ref: '#/definitions/Tag' }
+};
+
+definitions.AtomFeed.properties.searchInfo = {
+  type: 'array',
+  items: { $ref: '#/definitions/SearchInfo' }
 };

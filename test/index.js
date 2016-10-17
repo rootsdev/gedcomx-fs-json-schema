@@ -26,6 +26,8 @@ it('Merge', validateFile('merge'));
 
 it('MergeAnalysis', validateFile('merge-analyses'));
 
+it('SearchInfo', validateFile('searchInfo'));
+
 function validateFile(name){
   return function(){
     assert.jsonSchema(require('./data/' + name), fsSchema);
