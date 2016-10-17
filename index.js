@@ -92,6 +92,16 @@ definitions.FeatureSet = {
   }
 };
 
+definitions.FeedbackInfo = {
+  type: 'object',
+  properties: {
+    status: { type: 'string' },
+    resolution: { type: 'string' },
+    details: { type: 'string' },
+    place: { $ref: '#/definitions/ResourceReference' }
+  }
+};
+
 definitions.MatchInfo = {
   type: 'object',
   properties: {
@@ -205,6 +215,11 @@ definitions.GedcomX.properties.discussions = {
 definitions.GedcomX.properties.features = {
   type: 'array',
   items: { $ref: '#/definitions/FeatureSet' }
+};
+
+definitions.GedcomX.properties.feedbackInfo = {
+  type: 'array',
+  items: { $ref: '#/definitions/FeedbackInfo' }
 };
 
 definitions.GedcomX.properties.merges = {

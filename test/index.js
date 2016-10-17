@@ -28,6 +28,8 @@ it('MergeAnalysis', validateFile('merge-analyses'));
 
 it('SearchInfo', validateFile('searchInfo'));
 
+it('FeedbackInfo', validateFile('feedbackInfo'));
+
 function validateFile(name){
   return function(){
     assert.jsonSchema(require('./data/' + name), fsSchema);
