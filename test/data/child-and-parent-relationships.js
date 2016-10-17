@@ -1,3 +1,4 @@
+// https://familysearch.org/developers/docs/api/tree/Read_Relationships_to_Children_(Deprecated)_usecase
 module.exports = {
   "links" : {
     "person" : {

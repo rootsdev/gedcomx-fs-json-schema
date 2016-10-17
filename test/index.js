@@ -22,6 +22,8 @@ it('Tag', validateFile('tags'));
 
 it('User', validateFile('users'));
 
+it('Merge', validateFile('merge'));
+
 function validateFile(name){
   return function(){
     assert.jsonSchema(require('./data/' + name), fsSchema);

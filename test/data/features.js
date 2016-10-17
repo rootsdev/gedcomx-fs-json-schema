@@ -1,3 +1,4 @@
+// https://familysearch.org/platform/pending-modifications.json
 module.exports = {
   "features" : [ {
     "name" : "consolidate-redundant-resources",

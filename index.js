@@ -100,6 +100,20 @@ definitions.MatchInfo = {
   }
 };
 
+definitions.Merge = {
+  type: 'object',
+  properties: {
+    resourcesToDelete: { 
+      type: 'array',
+      items: { $ref: '#/definitions/ResourceReference' }
+    },
+    resourcesToCopy: { 
+      type: 'array',
+      items: { $ref: '#/definitions/ResourceReference' }
+    }
+  }
+};
+
 definitions.Tag = {
   type: 'object',
   properties: {
@@ -155,6 +169,11 @@ definitions.GedcomX.properties.discussions = {
 definitions.GedcomX.properties.features = {
   type: 'array',
   items: { $ref: '#/definitions/FeatureSet' }
+};
+
+definitions.GedcomX.properties.merges = {
+  type: 'array',
+  items: { $ref: '#/definitions/Merge' }
 };
 
 definitions.GedcomX.properties.users = {
