@@ -114,6 +114,34 @@ definitions.Merge = {
   }
 };
 
+definitions.MergeAnalysis = {
+  type: 'object',
+  properties: {
+    survivorResources: {
+      type: 'array',
+      items: { $ref: '#/definitions/ResourceReference' }
+    },
+    duplicateResources:	{
+      type: 'array',
+      items: { $ref: '#/definitions/ResourceReference' }
+    },
+    conflictingResources:	{
+      type: 'array',
+      items: { $ref: '#/definitions/MergeConflict' }
+    },
+    survivor:	{ $ref: '#/definitions/ResourceReference' },
+    duplicate: { $ref: '#/definitions/ResourceReference' }
+  }
+};
+
+definitions.MergeConflict = {
+  type: 'object',
+  properties: {
+    survivorResource: { $ref: '#/definitions/ResourceReference' },
+    duplicateResource: { $ref: '#/definitions/ResourceReference' }
+  }
+};
+
 definitions.Tag = {
   type: 'object',
   properties: {
@@ -174,6 +202,11 @@ definitions.GedcomX.properties.features = {
 definitions.GedcomX.properties.merges = {
   type: 'array',
   items: { $ref: '#/definitions/Merge' }
+};
+
+definitions.GedcomX.properties.mergeAnalyses = {
+  type: 'array',
+  items: { $ref: '#/definitions/MergeAnalysis' }
 };
 
 definitions.GedcomX.properties.users = {
