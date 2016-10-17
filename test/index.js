@@ -30,6 +30,8 @@ it('SearchInfo', validateFile('searchInfo'));
 
 it('FeedbackInfo', validateFile('feedbackInfo'));
 
+it('Error', validateFile('error'));
+
 function validateFile(name){
   return function(){
     assert.jsonSchema(require('./data/' + name), fsSchema);

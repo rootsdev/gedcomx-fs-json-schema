@@ -82,6 +82,16 @@ definitions.DiscussionReference = {
   }
 };
 
+definitions.Error = {
+  type: 'object',
+  properties: {
+    code: { type: 'integer' },
+    label: { type: 'string' },
+    message: { type: 'string' },
+    stacktrace: { type: 'string' }
+  }
+};
+
 definitions.FeatureSet = {
   type: 'object',
   properties: {
@@ -256,3 +266,5 @@ definitions.AtomFeed.properties.searchInfo = {
   type: 'array',
   items: { $ref: '#/definitions/SearchInfo' }
 };
+
+schema.anyOf.push({ $ref: '#/definitions/Error '});
