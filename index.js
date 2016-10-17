@@ -107,6 +107,32 @@ definitions.Tag = {
   }
 };
 
+definitions.User = {
+  type: 'object',
+  allOf: [
+    { $ref: '#/definitions/ExtensibleData' }
+  ],
+  properties: {
+    alternateEmail: { type: 'string' },
+    birthDate: { type: 'string' },
+    contactName: { type: 'string' },
+    country: { type: 'string' },
+    displayName: { type: 'string' },
+    email: { type: 'string' },
+    familyName: { type: 'string' },
+    fullName: { type: 'string' },
+    gender: { type: 'string' },
+    givenName: { type: 'string' },
+    helperAccessPin: { type: 'string' },
+    mailingAddress: { type: 'string' },
+    mobilePhoneNumber: { type: 'string' },
+    personId: { type: 'string' },
+    phoneNumber: { type: 'string' },
+    preferredLanguage: { type: 'string' },
+    treeUserId: { type: 'string' }
+  }
+};
+
 /**
  * Property extensions
  */
@@ -129,6 +155,11 @@ definitions.GedcomX.properties.discussions = {
 definitions.GedcomX.properties.features = {
   type: 'array',
   items: { $ref: '#/definitions/FeatureSet' }
+};
+
+definitions.GedcomX.properties.users = {
+  type: 'array',
+  items: { $ref: '#/definitions/User' }
 };
 
 definitions.AtomEntry.properties.matchInfo = {

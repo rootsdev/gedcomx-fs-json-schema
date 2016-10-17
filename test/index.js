@@ -20,6 +20,8 @@ it('MatchInfo', validateFile('matches'));
 
 it('Tag', validateFile('tags'));
 
+it('User', validateFile('users'));
+
 function validateFile(name){
   return function(){
     assert.jsonSchema(require('./data/' + name), fsSchema);
