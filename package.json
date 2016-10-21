@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/rootsdev/gedcomx-fs-json-schema#readme",
   "dependencies": {
-    "gedcomx-json-schema": "^1.4.0"
+    "gedcomx-json-schema": "^1.5.0"
   },
   "devDependencies": {
     "chai": "^3.5.0",
