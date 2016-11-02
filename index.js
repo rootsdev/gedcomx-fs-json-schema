@@ -92,7 +92,7 @@ definitions.Error = {
   }
 };
 
-definitions.FeatureSet = {
+definitions.Feature = {
   type: 'object',
   properties: {
     name: { type: 'string' },
@@ -224,7 +224,7 @@ definitions.GedcomX.properties.discussions = {
 
 definitions.GedcomX.properties.features = {
   type: 'array',
-  items: { $ref: '#/definitions/FeatureSet' }
+  items: { $ref: '#/definitions/Feature' }
 };
 
 definitions.GedcomX.properties.feedbackInfo = {
