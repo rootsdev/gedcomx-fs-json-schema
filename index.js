@@ -5,6 +5,22 @@ var schema = module.exports = require('gedcomx-json-schema'),
  * New data types
  */
 
+definitions.ArtifactMetadata = {
+  type: 'object',
+  properties: {
+    filename: { type: 'string' },
+    qualifiers: {
+      type: 'array',
+      items: { $ref: '#/definitions/Qualifier' }
+    },
+    width: { type: 'number' },
+    height: { type: 'number' },
+    size: { type: 'number' },
+    screeningState: { type: 'string' },
+    editable: { type: 'boolean' }
+  }
+};
+
 definitions.ChangeInfo = {
   type: 'object',
   properties: {
@@ -265,6 +281,11 @@ definitions.SourceReference.properties.tags = {
 definitions.AtomFeed.properties.searchInfo = {
   type: 'array',
   items: { $ref: '#/definitions/SearchInfo' }
+};
+
+definitions.SourceDescription.properties.artifactMetadata = {
+  type: 'array',
+  items: { $ref: '#/definitions/ArtifactMetadata' }
 };
 
 schema.anyOf.push({ $ref: '#/definitions/Error '});

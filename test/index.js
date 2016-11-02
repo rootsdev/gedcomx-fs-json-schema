@@ -32,6 +32,8 @@ it('FeedbackInfo', validateFile('feedbackInfo'));
 
 it('Error', validateFile('error'));
 
+it('ArtifactMetaData', validateFile('artifact-metadata'));
+
 function validateFile(name){
   return function(){
     assert.jsonSchema(require('./data/' + name), fsSchema);
