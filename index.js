@@ -288,4 +288,12 @@ definitions.SourceDescription.properties.artifactMetadata = {
   items: { $ref: '#/definitions/ArtifactMetadata' }
 };
 
-schema.anyOf.push({ $ref: '#/definitions/Error '});
+schema.anyOf.push({ 
+  type: 'object',
+  properties: {
+    errors: {
+      type: 'array',
+      items: { $ref: '#/definitions/Error' }
+    }
+  }
+});
