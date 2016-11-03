@@ -178,6 +178,13 @@ definitions.MergeConflict = {
   }
 };
 
+definitions.NameFormInfo = {
+  type: 'object',
+  properties: {
+    order: { type: 'string' }
+  }
+};
+
 definitions.SearchInfo = {
   type: 'object',
   properties: {
@@ -286,6 +293,11 @@ definitions.AtomFeed.properties.searchInfo = {
 definitions.SourceDescription.properties.artifactMetadata = {
   type: 'array',
   items: { $ref: '#/definitions/ArtifactMetadata' }
+};
+
+definitions.NameForm.properties.nameFormInfo = {
+  type: 'array',
+  items: { $ref: '#/definitions/NameFormInfo' }
 };
 
 schema.anyOf.push({ 
