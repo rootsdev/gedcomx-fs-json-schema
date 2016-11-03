@@ -185,6 +185,33 @@ definitions.NameFormInfo = {
   }
 };
 
+definitions.Ordinance = {
+  type: 'object',
+  allOf: [
+    { $ref: '#/definitions/Reservation' }
+  ],
+  properties: {
+    living: { type: 'boolean' },
+    date: { $ref: '#/definitions/Date' },
+    templeCode: { type: 'string' }
+  }
+};
+
+definitions.Reservation = {
+  type: 'object',
+  allOf: [
+    { $ref: '#/definitions/Conclusion' }
+  ],
+  properties: {
+    type: { type: 'string' },
+    status: { type: 'string' },
+    spouse: { $ref: '#/definitions/ResourceReference' },
+    father: { $ref: '#/definitions/ResourceReference' },
+    mother: { $ref: '#/definitions/ResourceReference' },
+    assignee: { $ref: '#/definitions/ResourceReference' }
+  }
+};
+
 definitions.SearchInfo = {
   type: 'object',
   properties: {
@@ -298,6 +325,11 @@ definitions.SourceDescription.properties.artifactMetadata = {
 definitions.NameForm.properties.nameFormInfo = {
   type: 'array',
   items: { $ref: '#/definitions/NameFormInfo' }
+};
+
+definitions.Person.properties.ordinances = {
+  type: 'array',
+  items: { $ref: '#/definitions/Ordinance' }
 };
 
 schema.anyOf.push({ 

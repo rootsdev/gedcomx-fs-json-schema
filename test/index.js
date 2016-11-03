@@ -36,6 +36,10 @@ it('ArtifactMetaData', validateFile('artifact-metadata'));
 
 it('NameFormInfo', validateFile('person'));
 
+it('Reservations', validateFile('reservations'));
+
+it('Ordinances', validateFile('ordinances'));
+
 function validateFile(name){
   return function(){
     assert.jsonSchema(require('./data/' + name), fsSchema);
