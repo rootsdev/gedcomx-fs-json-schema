@@ -7,34 +7,34 @@ module.exports = {
     } ]
   } ],
   "places" : [ {
-    "sources" : [ {
-      "descriptionId" : "sd",
-      "description" : "#sd"
-    } ],
-    "notes" : [ {
-      "text" : "Submitted by John Doe on 2016-06-08 13:32:33 via http://mydomain.com/mypage."
-    } ],
     "attribution" : {
       "contributor" : {
         "resource" : "mailto:user@somewhere.org"
       },
       "changeMessage" : "I'd like to reference this cemetery in burial information."
     },
-    "names" : [ {
-      "value" : "Gate of Heaven Cemetery"
-    } ],
     "latitude" : 41.095932,
     "longitude" : 73.794519,
     "spatialDescription" : {
       "resource" : "data:,Just%20off%20Stevens%20Avenue%20in%20Hawthorne,%20NY"
-    }
-  } ],
-  "feedbackInfo" : [ {
-    "resolution" : "data:,Place%20Created",
-    "status" : "data:,Resolved",
-    "place" : {
-      "resource" : "https://familysearch.org/platform/places/description/768459"
     },
-    "details" : "A new place was created."
+    "sources" : [ {
+      "description" : "#sd",
+      "descriptionId" : "sd"
+    } ],
+    "notes" : [ {
+      "text" : "Submitted by John Doe on 2016-06-08 13:32:33 via http://mydomain.com/mypage."
+    } ],
+    "names" : [ {
+      "value" : "Gate of Heaven Cemetery"
+    } ],
+    "feedbackInfo" : [ {
+      "resolution" : "data:,Place%20Created",
+      "status" : "data:,Resolved",
+      "place" : {
+        "resource" : "https://familysearch.org/platform/places/description/768459"
+      },
+      "details" : "A new place was created."
+    } ]
   } ]
 };

@@ -277,7 +277,7 @@ definitions.GedcomX.properties.features = {
   items: { $ref: '#/definitions/Feature' }
 };
 
-definitions.GedcomX.properties.feedbackInfo = {
+definitions.PlaceDescription.properties.feedbackInfo = {
   type: 'array',
   items: { $ref: '#/definitions/FeedbackInfo' }
 };
